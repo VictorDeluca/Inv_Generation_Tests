@@ -10,10 +10,10 @@ int main() {
   __VERIFIER_assume(material_length + nlen - j <= 2);
   __VERIFIER_assume(nlen <= 4 && idBitLength + material_length <= 2);
   for (j = 0; (j < idBitLength / 8) && (j < material_length); j++) {
-    __VERIFIER_assert( 0 <= j);
-    __VERIFIER_assert( j < material_length );
-    __VERIFIER_assert( 0 <= j/4 );
-    __VERIFIER_assert( j/4 < nlen);
+    assert( 0 <= j);
+    assert( j < material_length );
+    assert( 0 <= j/4 );
+    assert( j/4 < nlen);
     __VERIFIER_assume(material_length + nlen - j <= 2);
     __VERIFIER_assume(nlen <= 4 && idBitLength + material_length <= 2);
   }
