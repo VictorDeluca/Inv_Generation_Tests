@@ -17,6 +17,6 @@ int main(void) {
     __VERIFIER_assume(w - x + z <= 2);
   }
   __VERIFIER_assume(y <= 1);
-  __VERIFIER_assert(w == x && y == z);
+  assert(w == x && y == z);
   return 0;
 }
