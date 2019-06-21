@@ -4,15 +4,12 @@ int main()
  unsigned int x=n, y=0;
  
  __VERIFIER_assume(y + n <= 10 && y <= 10);  
- //__VERIFIER_assume(y <= 10); 
  while(x>0)
  {
    x--;
-   y++;
-   //__VERIFIER_assume(y + n <= 10);     
-   //__VERIFIER_assume(y <= 10);      
+   y++;   
    __VERIFIER_assume(y + n <= 10 && y <= 10);  
  } 
  __VERIFIER_assume(y <= 10);
- __VERIFIER_assert(y==n);
+ assert(y==n);
 }
