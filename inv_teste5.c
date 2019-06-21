@@ -11,5 +11,5 @@ int main() {
   }
   __VERIFIER_assume(-x <= 3);
 
-  __VERIFIER_assert(x!=0);
+  assert(x!=0);
 }
