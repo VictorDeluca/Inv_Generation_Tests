@@ -12,5 +12,5 @@ int main(void) {
 	}
 	__VERIFIER_assume(x <= 2);
 
-	__VERIFIER_assert(x == 100000000) ;
+	assert(x == 100000000) ;
 }
