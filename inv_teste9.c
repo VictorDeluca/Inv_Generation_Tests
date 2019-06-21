@@ -11,7 +11,7 @@ int main() {
 	__VERIFIER_assume(-i + n - sum <= 2);
     }
     __VERIFIER_assume(i - sum <= 8);
-    __VERIFIER_assert(2*sum == n*(n+1));
+   assert(2*sum == n*(n+1));
     return 0;
 }
 
