@@ -13,6 +13,5 @@ int main() {
     assert( 0 <= j/4 );
     assert( j/4 < nlen);
   }
-  
   return 0;
 }
