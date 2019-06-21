@@ -12,6 +12,6 @@ int main() {
 			k++;
 		}
     }
-    __VERIFIER_assert(k >= 100);
+    assert(k >= 100);
     return 0;
 }
