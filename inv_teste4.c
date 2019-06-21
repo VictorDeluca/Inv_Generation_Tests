@@ -9,7 +9,7 @@ int main(){
 		__VERIFIER_assume(n <= 2);
 	}
 	__VERIFIER_assume(n <= 2);
-	__VERIFIER_assert(i>=n);
+	assert(i>=n);
 
 	return 0;
 }
