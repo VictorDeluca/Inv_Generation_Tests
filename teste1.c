@@ -7,7 +7,7 @@ int main()
  {
    x--;
    y++;
- 
  } 
+ 
  assert(y==n);
 }
