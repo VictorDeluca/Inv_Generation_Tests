@@ -8,6 +8,6 @@ int main(void) {
     __VERIFIER_assume(x <= 1);
   }
   __VERIFIER_assume(x <= 1);
-  __VERIFIER_assert(!(x % 2));
+  assert(!(x % 2));
   return 0;
 }
