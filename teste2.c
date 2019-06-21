@@ -9,5 +9,5 @@ int main(void) {
     }
   }
 
-  __VERIFIER_assert(x == 100000000) ;
+  assert(x == 100000000) ;
 }
