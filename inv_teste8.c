@@ -22,6 +22,6 @@ int main() {
 		__VERIFIER_assume(n + m - k - i - j <= 2);
     }
     __VERIFIER_assume(n - j <= 2);
-    __VERIFIER_assert(k >= 100);
+    assert(k >= 100);
     return 0;
 }
