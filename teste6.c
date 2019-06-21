@@ -12,6 +12,6 @@ int main(void) {
       --y; --z;
     }
   }
-  __VERIFIER_assert(w == x && y == z);
+  assert(w == x && y == z);
   return 0;
 }
