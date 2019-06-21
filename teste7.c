@@ -10,6 +10,6 @@ int main() {
 			n ++;
 		}
     }
-    __VERIFIER_assert(k < 0 || n == k);
+    assert(k < 0 || n == k);
     return 0;
 }
