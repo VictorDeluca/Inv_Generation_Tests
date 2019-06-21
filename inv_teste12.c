@@ -15,6 +15,6 @@ int main() {
         x++;
 	__VERIFIER_assume(-y <= 3);
     }
-    __VERIFIER_assert(x == 100);
+    assert(x == 100);
     return 0;
 }
