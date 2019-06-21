@@ -9,5 +9,5 @@ int main()
    y++;
  
  } 
- __VERIFIER_assert(y==n);
+ assert(y==n);
 }
