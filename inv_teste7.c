@@ -16,6 +16,6 @@ int main() {
 		__VERIFIER_assume(-n <= 4);
 	}
 	__VERIFIER_assume(-i - k <= 1);
-	__VERIFIER_assert(k < 0 || n == k);
+	assert(k < 0 || n == k);
 	return 0;
 }
