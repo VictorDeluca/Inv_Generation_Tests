@@ -39,13 +39,13 @@ int main()
     int d_3 = __VERIFIER_nondet_int();
     __VERIFIER_assume(d_3 >= 1 && d_3 <= 5);        
 
-    assert((i-x0 < n) && !(c_01*x0 + c_11*i + c_21*n <= d_1));
+    assert(!(i-x0 < n) && !(c_01*x0 + c_11*i + c_21*n <= d_1));
     //__VERIFIER_assume( -i + -t + -p <= -2);
 
-    assert((i-x0 < n) && !(c_01*x0 + c_11*i + c_21*n <= d_1) && !(c_02*x0 + c_12*i + c_22*n <= d_2));
+    assert(!(i-x0 < n) && !(c_01*x0 + c_11*i + c_21*n <= d_1) && !(c_02*x0 + c_12*i + c_22*n <= d_2));
     //__VERIFIER_assume(-i + -t + -p <= -1);
 
-    assert((i-x0 >= n) && !(c_03*x0 + c_13*i + c_23*n <= d_3));
+    assert(!(i-x0 >= n) && !(c_03*x0 + c_13*i + c_23*n <= d_3));
     //__VERIFIER_assume(-i + -t + -p <= -1);
 
     
