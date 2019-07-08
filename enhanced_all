@@ -1,0 +1,49 @@
+------------------------------ Teste 1 ----------------------------
+SAT time: 0:028 seconds
+Verification time: 0.037 seconds
+
+Enhanced invariant + Constraints: 0.032 seconds
+
+------------------------------ Teste 2 ----------------------------
+SAT time: 0.009 seconds (Yields no invariant)
+Verification time: N/A (Unwinding Assertion Loop)
+
+------------------------------ Teste 6 ----------------------------
+SAT time: 0.134 seconds
+Verification time: 0.347 seconds
+
+Enhanced invariant + Constraints: 0.156 seconds
+
+------------------------------ Teste 7 ----------------------------
+SAT time: 0.025 seconds
+Verification time: 0.029 seconds
+
+Enhanced invariant + Constraints: 0.056 seconds
+
+------------------------------ Teste 8 ----------------------------
+SAT time: 0.120 seconds
+Verification time: 0.539 seconds
+
+Enhanced invariant + Constraints: 1.193 seconds
+
+------------------------------ Teste 9 ----------------------------
+SAT time: 0.002 seconds (Yields no invariant)
+Verification time: N/A (Unwinding Assertion Loop)
+
+------------------------------ Teste 10 ----------------------------
+SAT time: 0.005 seconds
+Verification time: N/A (Unwinding Assertion Loop)
+
+Enhanced invariant + Constraints: N/A (Unwinding Assertion Loop)
+
+------------------------------ Teste 11 ----------------------------
+SAT time: 0.091 seconds
+Verification time: 0.088 seconds
+
+Enhanced invariant + Constraints: 0.71 seconds
+
+------------------------------ Teste 12 ----------------------------
+SAT time: 0.004 seconds
+Verification time: N/A (Unwinding Assertion Loop)
+
+Enhanced invariant + Constraints: N/A (Unwinding Assertion Loop)

@@ -1,0 +1,339 @@
+--------------------------- Test1 --------------------------------
+
+docker run --rm -v $(pwd):/home/map2check/devel_tool/mygitclone:Z --user $(id -u):$(id -g) hrocha/mapdevel /bin/bash -c "/home/map2check/devel_tool/clang600/bin/llvm-dis mygitclone/074bb6118ce1df4efffb171215b818fcf0b907d8.map2check/074bb6118ce1df4efffb171215b818fcf0b907d8.map2check-compiled.bc -o mygitclone/test1.ll"
+
+Constraint generation: 0.06 seconds
+Verification time: 0.028 seconds
+
+//Code w/ constraints:
+int main()
+{
+	unsigned int n = __VERIFIER_nondet_uint();
+	unsigned int x=n, y=0;
+
+	__VERIFIER_assume(-y <= 0);
+	__VERIFIER_assume(x - n <= 0);
+	while(x>0)
+	{
+	x--;
+	y++;
+	__VERIFIER_assume(-y <= 0);
+	__VERIFIER_assume(x - n <= 0);
+	} 
+	__VERIFIER_assume(-y <= 0);
+	__VERIFIER_assume(x - n <= 0);
+
+	assert(y==n);
+}
+
+-------------------------------- Test 2 -------------------------------------
+
+docker run --rm -v $(pwd):/home/map2check/devel_tool/mygitclone:Z --user $(id -u):$(id -g) hrocha/mapdevel /bin/bash -c "/home/map2check/devel_tool/clang600/bin/llvm-dis mygitclone/4cdc0264473260640002bb42cab208b92ba254f3.map2check/4cdc0264473260640002bb42cab208b92ba254f3.map2check-compiled.bc -o mygitclone/test2.ll"
+
+Constraint generation: 0.07 seconds
+VERIFICATION FAILED: Unwinding Assertion Loop
+
+//Code w/constraints:
+int main(void) {
+	unsigned int x = 0;
+
+	assume(-x <= 0);
+	while (x < 100000000) {
+		if (x < 10000000) {
+			x++;
+		} else {
+			x += 2;
+		}
+		assume(-x <= 0);
+	}
+
+	assume(-x <= 0);
+	assert(x == 100000000);
+}
+
+-------------------------------- Tests 3,4,5 -------------------------------------
+
+Application failed to get constraints
+
+-------------------------------- Test 6 ------------------------------------------
+
+docker run --rm -v $(pwd):/home/map2check/devel_tool/mygitclone:Z --user $(id -u):$(id -g) hrocha/mapdevel /bin/bash -c "/home/map2check/devel_tool/clang600/bin/llvm-dis mygitclone/e1ab894dc9a399d393e0871e8653b85b922ad764.map2check/e1ab894dc9a399d393e0871e8653b85b922ad764.map2check-compiled.bc -o mygitclone/test6.ll"
+
+Constraint generation: 0.13 seconds
+VERIFICATION FAILED: Unwinding Assertion Loop
+
+//Code w/ constraints:
+#include <assert.h>
+
+int main(void) {
+	unsigned int w = __VERIFIER_nondet_uint();
+	unsigned int x = w;
+	unsigned int y = __VERIFIER_nondet_uint();
+	unsigned int z = y;
+	__VERIFIER_assume(-y + z <= 0);
+	__VERIFIER_assume(y - z <= 0);
+	__VERIFIER_assume(-w + x <= 0);
+	__VERIFIER_assume(w - x <= 0);
+	while (__VERIFIER_nondet_uint()) {
+		__VERIFIER_assume(-y + z <= 0);
+		__VERIFIER_assume(y - z <= 0);
+		__VERIFIER_assume(-w + x <= 0);
+		__VERIFIER_assume(w - x <= 0);
+		if (__VERIFIER_nondet_uint()) {
+			__VERIFIER_assume(-y + z <= 0);
+			__VERIFIER_assume(y - z <= 0);
+			__VERIFIER_assume(-w + x <= 0);
+			__VERIFIER_assume(w - x <= 0);
+			++w; ++x;
+		} else {
+			__VERIFIER_assume(-y + z <= 0);
+			__VERIFIER_assume(y - z <= 0);
+			__VERIFIER_assume(-w + x <= 0);
+			__VERIFIER_assume(w - x <= 0);
+			--y; --z;
+		}
+	}
+	__VERIFIER_assume(-y + z <= 0);
+	__VERIFIER_assume(y - z <= 0);
+	__VERIFIER_assume(-w + x <= 0);
+	__VERIFIER_assume(w - x <= 0);
+	assert(w == x && y == z);
+	return 0;
+}
+
+-------------------------------- Test 7 ------------------------------------------
+docker run --rm -v $(pwd):/home/map2check/devel_tool/mygitclone:Z --user $(id -u):$(id -g) hrocha/mapdevel /bin/bash -c "/home/map2check/devel_tool/clang600/bin/llvm-dis mygitclone/1778f2b9b10a862ff69c354ff8b821ad05cfc217.map2check/1778f2b9b10a862ff69c354ff8b821ad05cfc217.map2check-compiled.bc -o mygitclone/test7.ll"
+
+Constraint generation: 0.06 seconds
+Verification time: 0.044 seconds
+
+//Code w/ constraints:
+#include <assert.h>
+
+int main() {
+    int i = 0;
+    int n = 0;
+    int k = __VERIFIER_nondet_int();
+    if (!(k <= 1000000 && k >= -1000000)) return 0;
+	
+	__VERIFIER_assume(k <= 1000000 && k >= -1000000);
+	__VERIFIER_assume(-n <= 0);
+	__VERIFIER_assume(-i <= 0);
+	__VERIFIER_assume(n-i <= 0);
+    for(i = 0; i < 2*k; i++) {
+		if (i % 2 == 0) {
+			n ++;
+		}
+		__VERIFIER_assume(k <= 1000000 && k >= -1000000);
+		__VERIFIER_assume(-n <= 0);
+		__VERIFIER_assume(-i <= 0);
+		__VERIFIER_assume(n-i <= -1);
+		__VERIFIER_assume(-2*k <= -1);
+		__VERIFIER_assume(-2*k + i <= -1);
+		__VERIFIER_assume(-2*k + n <= -1);
+    }
+	__VERIFIER_assume(k <= 1000000 && k >= -1000000);
+	__VERIFIER_assume(-n <= 0);
+	__VERIFIER_assume(-i <= 0);
+	__VERIFIER_assume(2*k - i <= 0);
+    assert(k < 0 || n == k);
+    return 0;
+}
+
+-------------------------------- Test 8 ------------------------------------------
+docker run --rm -v $(pwd):/home/map2check/devel_tool/mygitclone:Z --user $(id -u):$(id -g) hrocha/mapdevel /bin/bash -c "/home/map2check/devel_tool/clang600/bin/llvm-dis mygitclone/e6e16339bfbd400c0aaefef838c6abb162313c3e.map2check/e6e16339bfbd400c0aaefef838c6abb162313c3e.map2check-compiled.bc -o mygitclone/test8.ll"
+
+Constraint generation: 0.11 seconds
+VERIFICATION FAILED: Unwinding Assertion Loop
+
+//Code w/ constraints:
+#include <assert.h>
+
+int main() {
+    int n = __VERIFIER_nondet_int();
+    int m = __VERIFIER_nondet_int();
+    int k = 0;
+    int i,j;
+    if (!(10 <= n && n <= 10000)) return 0;
+    if (!(10 <= m && m <= 10000)) return 0;
+	
+	__VERIFIER_assume(10 <= n && n <= 10000);
+	__VERIFIER_assume(10 <= m && m <= 10000);
+	__VERIFIER_assume(-i <= 0);
+	__VERIFIER_assume(-k <= 0);
+    for (i = 0; i < n; i++) {
+		__VERIFIER_assume(10 <= n && n <= 10000);
+		__VERIFIER_assume(10 <= m && m <= 10000);
+		__VERIFIER_assume(-i <= 0);
+		__VERIFIER_assume(-k <= 0);
+		__VERIFIER_assume(-n <= 0);
+		__VERIFIER_assume(-n + i <= -1);
+		for (j = 0; j < m; j++) {
+			k++;
+			__VERIFIER_assume(10 <= n && n <= 10000);
+			__VERIFIER_assume(10 <= m && m <= 10000);
+			__VERIFIER_assume(-i <= 0);
+			__VERIFIER_assume(-j <= 0);
+			__VERIFIER_assume(-k <= 0);
+			__VERIFIER_assume(-n <= 0);
+			__VERIFIER_assume(-m <= 0);
+			__VERIFIER_assume(-n + i <= -1);
+			__VERIFIER_assume(-m + j <= -1);
+			__VERIFIER_assume(-k + j <= 0);
+		}
+		__VERIFIER_assume(10 <= n && n <= 10000);
+		__VERIFIER_assume(10 <= m && m <= 10000);
+		__VERIFIER_assume(-i <= 0);
+		__VERIFIER_assume(-j <= 0);
+		__VERIFIER_assume(-k <= 0);
+		__VERIFIER_assume(-n <= 0);
+		__VERIFIER_assume(-m <= 0);
+		__VERIFIER_assume(-n + i <= -1);
+		__VERIFIER_assume(m - j <= 0);
+		__VERIFIER_assume(m - k <= 0);
+		__VERIFIER_assume(-k + j <= 0);
+    }
+	__VERIFIER_assume(10 <= n && n <= 10000);
+	__VERIFIER_assume(10 <= m && m <= 10000);
+	__VERIFIER_assume(-k <= 0);
+	__VERIFIER_assume(-i <= 0);
+	__VERIFIER_assume(n - i <= 0);
+    assert(k >= 100);
+    return 0;
+}
+
+------------------------------------------ Test 9 --------------------------------------------
+docker run --rm -v $(pwd):/home/map2check/devel_tool/mygitclone:Z --user $(id -u):$(id -g) hrocha/mapdevel /bin/bash -c "/home/map2check/devel_tool/clang600/bin/llvm-dis mygitclone/b8d64c2e9eae7db8378f962edc4b4c2dcb7a2059.map2check/b8d64c2e9eae7db8378f962edc4b4c2dcb7a2059.map2check-compiled.bc -o mygitclone/test9.ll"
+
+Constraint generation: 0.05 seconds
+VERIFICATION FAILED: Unwinding Assertion Loop
+
+//Code w/ constraints:
+#include <assert.h>
+
+int main() {
+    int n, sum, i;
+    n = __VERIFIER_nondet_int();
+    if (!(1 <= n && n <= 1000)) return 0;
+    sum = 0;
+	__VERIFIER_assume(1 <= n && n <= 1000);
+	__VERIFIER_assume(-sum <= 0);
+	__VERIFIER_assume(-i <= -1);
+	__VERIFIER_assume(-sum + i <= 0);
+    for(i = 1; i <= n; i++) {
+        sum = sum + i;
+		__VERIFIER_assume(1 <= n && n <= 1000);
+		__VERIFIER_assume(-sum <= 0);
+		__VERIFIER_assume(-i <= -1);
+		__VERIFIER_assum(-n <= -1);
+		__VERIFIER_assume(-n + i <= 0);
+		__VERIFIER_assume(-sum + i <= 1);
+    }
+	__VERIFIER_assume(1 <= n && n <= 1000);
+	__VERIFIER_assume(-sum <= 0);
+	__VERIFIER_assume(-i <= -1);
+	__VERIFIER_assum(-n <= -1);
+	__VERIFIER_assume(n - sum <= 0);
+	__VERIFIER_assume(n - i <= -1);
+	__VERIFIER_assume(-sum + i <= 1);
+    assert(2*sum == n*(n+1));
+    return 0;
+}
+
+--------------------------------------------------- Test 10 -------------------------------------------------
+docker run --rm -v $(pwd):/home/map2check/devel_tool/mygitclone:Z --user $(id -u):$(id -g) hrocha/mapdevel /bin/bash -c "/home/map2check/devel_tool/clang600/bin/llvm-dis mygitclone/093276672294fc7a652edd708ceb9ec29efa22e7.map2check/093276672294fc7a652edd708ceb9ec29efa22e7.map2check-compiled.bc -o mygitclone/test10.ll"
+
+Constraint generation: 0.05 seconds
+VERIFICATION FAILED: Unwinding Assertion Loop
+
+#include <assert.h>
+
+int main(void) {
+  unsigned int x = 0;
+  while (__VERIFIER_nondet_int()) {
+	__VERIFIER_assume(-x <= 0);
+    x += 2;
+  }
+  __VERIFIER_assume(-x <= 0);
+  
+  assert(!(x % 2));
+  return 0;
+}
+
+
+--------------------------------------------------- Test 11 ----------------------------------------------------
+docker run --rm -v $(pwd):/home/map2check/devel_tool/mygitclone:Z --user $(id -u):$(id -g) hrocha/mapdevel /bin/bash -c "/home/map2check/devel_tool/clang600/bin/llvm-dis mygitclone/391ab8dedfadb4c5bfc82128c7db183b5ec998be.map2check/391ab8dedfadb4c5bfc82128c7db183b5ec998be.map2check-compiled.bc -o mygitclone/test11.ll"
+
+Constraint generation: 0.05 seconds
+VERIFICATION FAILED: Unwinding Assertion Loop
+
+
+int main() {
+	int idBitLength, material_length, nlen;
+	int j, k;
+
+	nlen = __VERIFIER_nondet_int();
+	idBitLength = __VERIFIER_nondet_int();
+	material_length = __VERIFIER_nondet_int();
+	if (!( nlen  ==  idBitLength / 32 )) return 0;
+
+	__VERIFIER_assume(nlen == idBitLength/32);
+	for (j = 0; (j < idBitLength / 8) && (j < material_length); j++) {
+		assert( 0 <= j);
+		__VERIFIER_assume(-j <= 0);
+		__VERIFIER_assume(nlen == idBitLength/32);
+		__VERIFIER_assume((j < idBitLength / 8) && (j < material_length));
+		assert( j < material_length );
+		__VERIFIER_assume(-material_length <= 0);
+		__VERIFIER_assume(-j <= 0);
+		__VERIFIER_assume(nlen == idBitLength/32);
+		__VERIFIER_assume((j < idBitLength / 8) && (j < material_length));
+		__VERIFIER_assume(-material_length + j <= -1);
+		assert( 0 <= j/4 );
+		__VERIFIER_assume(-material_length <= 0);
+		__VERIFIER_assume(-j <= 0);
+		__VERIFIER_assume(-j/4 <= 0);
+		__VERIFIER_assume(nlen == idBitLength/32);
+		__VERIFIER_assume((j < idBitLength / 8) && (j < material_length));
+		__VERIFIER_assume(-material_length + j <= -1);
+	}
+	return 0;
+}
+
+--------------------------------------------------- Test12 --------------------------------------------------------------
+docker run --rm -v $(pwd):/home/map2check/devel_tool/mygitclone:Z --user $(id -u):$(id -g) hrocha/mapdevel /bin/bash -c "/home/map2check/devel_tool/clang600/bin/llvm-dis mygitclone/3c4e17b1f3a805d091f247935aa4d620aa576256.map2check/3c4e17b1f3a805d091f247935aa4d620aa576256.map2check-compiled.bc -o mygitclone/test12.ll"
+
+Constraint generation: 0.07 seconds
+VERIFICATION FAILED: Unwinding Assertion Loop
+
+#include <assert.h>
+
+int main() {
+    int x,y;
+    x = 0;
+    y = 0;
+	__VERIFIER_assume(-x <= 0);
+	__VERIFIER_assume(-y <= 0);
+	__VERIFIER_assume(-x + y <= 0);
+    while (1) {
+        if (x < 50) {
+            y++;
+        } else {
+            y--;
+        }
+        if (y < 0) break;
+        x++;
+		__VERIFIER_assume(-x <= 0);
+		__VERIFIER_assume(-y <= 0);
+		__VERIFIER_assume(-y + 1 <= 0);
+		__VERIFIER_assume(-y - 1 <= 0);
+		__VERIFIER_assume(-x + y <= 0);
+    }
+	__VERIFIER_assume(-x <= 0);
+	__VERIFIER_assume(-y <= 0);
+	__VERIFIER_assume(-y + 1 <= 0);
+	__VERIFIER_assume(-y - 1 <= 0);
+	__VERIFIER_assume(-x + y <= 0);
+    assert(x == 100);
+    return 0;
+}

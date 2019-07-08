@@ -1,0 +1,69 @@
+------------------------ Test 1 -------------------------
+
+Verification time: 0.048 seconds
+Runtime Decision Procedure: 0.004 seconds 
+No constraints: 0.088 seconds
+
+------------------------ Test 2 -------------------------
+
+Verification time: 0.009 seconds
+Runtime Decision Procedure: 0.004 seconds 
+No constraints: 0.008 seconds
+
+------------------------ Test 3 -------------------------
+
+Same thing: 0.051 seconds
+
+Runtime Decision Procedure: 0.034 seconds 
+
+------------------------ Test 4 -------------------------
+
+Same thing: 0.043 seconds
+Runtime Decision Procedure: 0.038 seconds 
+
+------------------------ Test 5 -------------------------
+
+Same thing: Unwinding Assertion Loop
+Runtime Decision Procedure: 0.003 seconds 
+
+------------------------ Test 6 -------------------------
+
+Verification time: 0.936 seconds
+Runtime Decision Procedure: 0.172 seconds 
+No constraitns: 1.780 seconds
+
+
+------------------------ Test 7 -------------------------
+
+Verification time: 0.062 seconds
+Runtime Decision Procedure: 0.039 seconds 
+No constraitns: 0.046 seconds
+
+------------------------ Test 8 -------------------------
+
+Verification time: 1.222 seconds
+Runtime Decision Procedure: 0.107 seconds 
+No constraints: 0.723 seconds
+
+------------------------ Test 9 -------------------------
+
+Verification time: 0.115 seconds
+Runtime Decision Procedure: 0.029 seconds 
+No constraints: 0.067 seconds
+
+------------------------ Test 10 ------------------------
+
+Verification time: 0.018 seconds
+Runtime Decision Procedure: 0.047 seconds 
+No constraints: 0.010 seconds
+
+------------------------ Test 11 ------------------------
+
+Verification time: 0.102 seconds
+Runtime Decision Procedure: 0.154 seconds 
+No constraints: 0.064 seconds
+
+------------------------ Test 12 ------------------------
+
+Same thing: Unwinding Assertion Loop
+Runtime Decision Procedure: 0.009 seconds 
